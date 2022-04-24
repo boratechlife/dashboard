@@ -8,6 +8,7 @@ export default createStore({
         percent:6.08,
         period:'Vs Previous Month',
         favorite:false,
+        classes:" border-yellow-500",
       
       },
       {
@@ -16,7 +17,8 @@ export default createStore({
         metric:"31K",
         percent:6.08,
         period:'Vs Previous Month',
-        favorite:false
+        favorite:false,
+        classes:" border-red-500",
       },
       {
         id:3,
@@ -24,7 +26,8 @@ export default createStore({
         metric:"31K",
         percent:-6.08,
         period:'Vs Previous Month',
-        favorite:false
+        favorite:false,
+        classes:" border-indigo-500",
       },
       {
         id:4,
@@ -32,7 +35,8 @@ export default createStore({
         metric:"31K",
         percent:6.08,
         period:'Vs Previous Month',
-        favorite:false
+        favorite:false,
+        classes:" border-blue-500",
       }
     ],
 
