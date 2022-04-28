@@ -17,9 +17,9 @@ import kips from '../data/kip'
 import {SortableContainer, SortableElement} from 'react-sortable-hoc';
 import {arrayMoveImmutable} from 'array-move';
 
-const SortableItem = SortableElement(({kip}) =>  ( <DashboardCard03  kip={kip} />));
+const SortableItem = SortableElement(({kip, edit}) =>  ( <DashboardCard03 edit={edit} kip={kip} />));
 
-const SortableList = SortableContainer(({KPIS}) => {
+const SortableList = SortableContainer(({KPIS, edit}) => {
 
 
   return (
@@ -32,7 +32,7 @@ const SortableList = SortableContainer(({KPIS}) => {
                      </div>
                      <div className="grid grid-cols-12 gap-4">
                        {item.options.map((opt, indx)=> {
-                         return ( <SortableItem key={indx} index={indx} kip={opt} />)
+                         return ( <SortableItem key={indx} index={indx} edit={edit} kip={opt} />)
                        })}
     
                      </div>
@@ -48,6 +48,7 @@ function Dashboard() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [crumbs, setCrumbs] = useState(['home'])
   const [KPIS, setKPIS] = useState(kips);
+  const [edit, setEdit] = useState(false);
 
   const onSortEnd = ({oldIndex, newIndex}) => {
    console.log(`old:${oldIndex} New:${newIndex}`)
@@ -59,7 +60,13 @@ function Dashboard() {
        }])
   };
 
-
+const handleSetEdit = () => {
+  setEdit(true);
+}
+const handleSave = () => {
+  //Saving logic will be here
+  setEdit(false);
+}
   return (
     <div className="flex h-screen overflow-hidden">
 
@@ -95,25 +102,28 @@ function Dashboard() {
                 {/* Datepicker built with flatpickr */}
                 <Datepicker />
                 {/* Add view button */}
-                <button className="btn bg-indigo-500 hover:bg-indigo-600 text-white">
+                {!edit && (<button className="btn bg-indigo-500 hover:bg-indigo-600 text-white" onClick={handleSetEdit}>
                     <svg className="w-4 h-4 fill-current opacity-50 shrink-0" viewBox="0 0 16 16">
                         <path d="M15 7H9V1c0-.6-.4-1-1-1S7 .4 7 1v6H1c-.6 0-1 .4-1 1s.4 1 1 1h6v6c0 .6.4 1 1 1s1-.4 1-1V9h6c.6 0 1-.4 1-1s-.4-1-1-1z" />
                     </svg>
                     <span className="hidden xs:block ml-2">Add view</span>
-                </button>                
+                </button> )} 
+
+                {edit && (<button className="btn bg-green-500 hover:bg-green-600 text-white" onClick={handleSave}>
+                    <svg className="w-4 h-4 fill-current opacity-50 shrink-0" viewBox="0 0 16 16">
+                        <path d="M15 7H9V1c0-.6-.4-1-1-1S7 .4 7 1v6H1c-.6 0-1 .4-1 1s.4 1 1 1h6v6c0 .6.4 1 1 1s1-.4 1-1V9h6c.6 0 1-.4 1-1s-.4-1-1-1z" />
+                    </svg>
+                    <span className="hidden xs:block ml-2">Save</span>
+                </button> )}              
               </div>
 
             </div>
 
             {/* Cards */}
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
-            <SortableList KPIS={KPIS}  onSortEnd={onSortEnd}/>
-              {/* Line chart (Acme Plus) */}
-              {/* <DashboardCard01 /> */}
-              {/* Line chart (Acme Advanced) */}
-              {/* <DashboardCard02 /> */}
-              {/* Line chart (Acme Professional) */}
-             {KPIS.map((item,index)=> {
+            <SortableList KPIS={KPIS} edit={edit}  onSortEnd={onSortEnd}/>
+
+             {/* {KPIS.map((item,index)=> {
                return (
                  <div key={index} className='card border rounded shadow  shadow-slate-400'>
                      <div className='top py-2 px-2 h-40 rounded bg-gray-800'>
@@ -127,7 +137,7 @@ function Dashboard() {
                      </div>
                  </div>
                )
-             })}
+             })} */}
 
               
             </div>

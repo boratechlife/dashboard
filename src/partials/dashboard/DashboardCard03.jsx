@@ -4,13 +4,13 @@ import LineChart from '../../charts/LineChart01';
 import Icon from '../../images/icon-03.svg';
 import Progress from 'react-circle-progress-bar'
 
-function DashboardCard03( { kip}) {
+function DashboardCard03( { kip, edit}) {
 
 
 
   return (
     <div className="flex flex-col col-span-full  bg-white shadow-lg rounded-sm border border-slate-200 relative">
-      <div className="absolute top-0  right-2 flex justify-end px-4 pt-3">
+      <div className={edit ? "absolute top-0  right-2 flex justify-end px-4 pt-3" : "hidden"}>
          {/* Menu button */}
          <span className='inline-flex hover:text-yellow-500'>
             <svg

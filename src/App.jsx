@@ -13,12 +13,13 @@ import './charts/ChartjsConfig';
 // Import pages
 import Dashboard from './pages/Dashboard';
 import Details from './pages/Details';
+import { useState } from 'react/cjs/react.production.min';
 
 
 function App() {
 
   const location = useLocation();
-
+ 
   useEffect(() => {
     document.querySelector('html').style.scrollBehavior = 'auto'
     window.scroll({ top: 0 })
