@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+
 import {
   Routes,
   Route,
@@ -11,6 +12,8 @@ import './charts/ChartjsConfig';
 
 // Import pages
 import Dashboard from './pages/Dashboard';
+import Details from './pages/Details';
+
 
 function App() {
 
@@ -26,6 +29,7 @@ function App() {
     <>
       <Routes>
         <Route exact path="/" element={<Dashboard />} />
+        <Route exact path="/details/:id" element={<Details />} />
       </Routes>
     </>
   );

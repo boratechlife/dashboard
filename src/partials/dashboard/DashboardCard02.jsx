@@ -85,11 +85,7 @@ function DashboardCard02() {
           <div className="text-sm font-semibold text-white px-1.5 bg-yellow-500 rounded-full">-14%</div>
         </div>
       </div>
-      {/* Chart built with Chart.js 3 */}
-      <div className="grow">
-        {/* Change the height attribute to adjust the chart height */}
-        <LineChart data={chartData} width={389} height={128} />
-      </div>
+      
     </div>
   );
 }
