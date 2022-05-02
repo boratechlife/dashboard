@@ -245,10 +245,14 @@ export default createStore({
     enableEditing:true,
     enableChartEditing:false,
     openMobileMenu:false,
+    openFilter:false,
     },
 
     getters:{},
     mutations: {
+      SET_OPEN_FILTER(state,payload) {
+     state.openFilter = payload;
+      },
       ENABLE_EDITING(state)  {
         state.enableEditing = true;
       },
