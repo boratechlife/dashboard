@@ -1,5 +1,6 @@
 <template>
   <div class="content py-6 px-4">
+    <BreadCrumb title="Details" :crumbs="['Dashboard', 'Details']"/>
     <div class="bg-white">
       <!-- START DETAIL HEADER -->      
     <div class="w-full flex justify-end items-center gap-4 bg-white py-2 px-3">
@@ -19,6 +20,7 @@
       </button>
     </div>
   </div>
+    <HighChart />
  
 
       <draggable 
@@ -29,8 +31,10 @@
   class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4  justify-between"
   item-key="id">
   <template #item="{element,index}">
-  <ChartComponent  :chartMetric="getMetricByID(activeID)" :chartData="element" :index="index"  v-if="element.favorite || enableChartEditing " />
-  
+   <div>
+   
+  <ChartComponent  :chartMetric="getMetricByID(activeID)" :chartData="element" :chartOptions="element.chartOptions" :index="index"  v-if="element.favorite || enableChartEditing " />
+   </div>
    </template>
 </draggable>
     </div>
@@ -204,6 +208,8 @@
 
   import draggable from 'vuedraggable'
 import ChartComponent from "../components/ChartComponent.vue";
+import HighChart from "../components/HighChart.vue"
+import BreadCrumb from "../components/BreadCrumb.vue"
 import { mapState, mapMutations, mapActions } from 'vuex';
 export default {
 data() {
@@ -214,13 +220,15 @@ data() {
 },
   components: {
     ChartComponent,
-    draggable
+    draggable,
+    HighChart,
+    BreadCrumb
   },
 computed: {
   ...mapState(['MetricCharts','enableChartEditing']),
     metrics: {
             get() {
-             return  this.getMetricByID(this.activeID).charts
+             return  this.getMetricByID(this.activeID).highcharts
         },
         set(value) {
             this.$store.commit('UPDATE_CHART_METRICS', {activeID:this.activeID,value:value})

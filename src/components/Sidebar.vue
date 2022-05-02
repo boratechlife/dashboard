@@ -20,32 +20,36 @@
       <div class="item font-sans">
         <h5 class="text-xs uppercase text-gray-500 px-3 font-bold">Menu</h5>
         <ul class="w-full my-3">
-          <li tabindex="0" class="collapse collapse-arrow px-0 py-0 mx-0 my-0 ">
-  <div class="collapse-title leading-8 text-sm ">
-          <div class="flex justify-between w-full  px-3  cursor-pointer py-0 text-gray-500 items-center">
-                 <span class="icon">
-               <svg xmlns="http://www.w3.org/2000/svg"  width="24" class="stroke-current h-5 w-5 " height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 9v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9"/><path d="M9 22V12h6v10M2 10.6L12 2l10 8.6"/></svg>
-             </span>
-            <span class="flex-1 font-medium px-2"> Dashboards</span>
-           
-         </div>
-  </div>
-  <div class="collapse-content mt-0"> 
-              <!-- COLLAPSE -->
-           <div class="w-full bg-transparent  text-white w-full px-3">
-             <ul>
-               <li class="flex justify-between w-full hover:bg-gray-900 px-4 pl-7 hover:text-gray-100 cursor-pointer py-1 text-gray-500 items-center font-normal text-sm lg:text-base">Saas</li>
-                 <li class="flex justify-between w-full hover:bg-gray-900 px-4 pl-7 hover:text-gray-100 cursor-pointer py-1 text-gray-500 items-center font-normal text-sm lg:text-base">Crypto</li>
-                   <li class="flex justify-between w-full hover:bg-gray-900 px-4 pl-7 hover:text-gray-100 cursor-pointer py-1 text-gray-500 items-center font-normal text-sm lg:text-base">Blog</li>
-               
-               
-               
-             </ul>
-           </div>
-  </div>
-</li>
-          
-           
+        <li class="flex items-center gap-2 px-3.5 py-2.5 hover:bg-gray-900 hover:text-white cursor-pointer" v-for="(item, index) in menu" :key="index">
+<span v-if="item.id===1">
+<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+</svg>
+</span>
+<span v-if="item.id===2">
+<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
+</svg>
+</span>
+
+<span v-if="item.id===3">
+<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+</svg>
+</span>
+<span v-if="item.id===4">
+<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+</svg>
+</span>
+
+<span v-if="item.id===5">
+<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+</svg>
+</span>
+ <span>{{item.name}}</span>
+          </li>        
         </ul>
       </div>
   <!-- END ITEM -->
@@ -60,8 +64,35 @@
 <script>
 
 import { mapMutations } from 'vuex'
+
 export default {
     name:'Sidebar',
+   data(){
+     return {
+       menu: [
+         {
+           id:1,
+           name:"IFT Activity",
+         },
+        {
+           id:2,
+           name:"Coverage",
+         },
+         {
+           id:3,
+           name:"Messaging",
+         },
+         {
+           id:4,
+           name:"Direct Sales",
+         },
+          {
+           id:5,
+           name:"IQVIA Sales",
+         }
+       ]
+     }
+   },
     computed: {
       openMobileMenu() {
         return this.$store.state.openMobileMenu;

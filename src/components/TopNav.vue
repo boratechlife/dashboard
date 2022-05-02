@@ -1,6 +1,6 @@
 <template>
            <!-- TOP NAV -->
-        <nav class="w-full shadow-lg px-4 py-2">
+        <nav class="w-full shadow-lg bg-gray-50 px-4 py-2">
         <div class="w-full flex justify-between">
               <div class="hidden bg-gray-200 rounded-2xl  text-gray-600 px-3 py-1.5 lg:flex items-center">
                 <span>
@@ -12,7 +12,7 @@
                 <div class="lg:hidden" @click="TOGGLE_MOBILE_MENU()">
                   <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
                 </div>
-                <div class="dropdown dropdown-right  lg:dropdown-end">
+                <div class="dropdown   lg:dropdown-end">
                   <label tabindex="0" class="h-4 w-4 lg:h-6 lg:w-6 object-contain">
                     <img src="https://themesbrand.com/skote-symfony/layouts/assets/images/flags/us.jpg" class="h-6 w-6 object-contain" alt="" srcset="">
                   </label>

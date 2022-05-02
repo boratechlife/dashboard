@@ -8,8 +8,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@heroicons/vue": "^1.0.6",
     "apexcharts": "^3.35.0",
     "daisyui": "^2.14.1",
+    "highcharts-vue": "^1.4.0",
+    "tailwindcss-neumorphism": "^0.1.0",
     "vue": "^3.2.25",
     "vue-router": "^4.0.13",
     "vue3-apexcharts": "^1.4.1",

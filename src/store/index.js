@@ -1,50 +1,74 @@
 import {createStore} from 'vuex'
 export default createStore({
     state:{
-      kipsMetrics:[{
-        id:1,
-        title:"Total Watch Time",
-        metric:"31K",
-        percent:6.08,
-        period:'Vs Previous Month',
-        favorite:false,
-        classes:" border-yellow-500",
-      
-      },
-      {
-        id:2,
-        title:"Total Watch Time",
-        metric:"31K",
-        percent:6.08,
-        period:'Vs Previous Month',
-        favorite:false,
-        classes:" border-red-500",
-      },
-      {
-        id:3,
-        title:"Total Watch Time",
-        metric:"31K",
-        percent:-6.08,
-        period:'Vs Previous Month',
-        favorite:false,
-        classes:" border-indigo-500",
-      },
-      {
-        id:4,
-        title:"Total Watch Time",
-        metric:"31K",
-        percent:6.08,
-        period:'Vs Previous Month',
-        favorite:false,
-        classes:" border-blue-500",
-      }
+      kipsMetrics:[
+       {
+          metric_type_id:1,
+          name:"IFT Activity",
+  
+          KPI_metrics:[{
+            id:1,
+            title:"Total Watch Time",
+            metric:"31K",
+            percent:6.08,
+            period:'Vs Previous Month',
+            favorite:false,
+            classes:" border-yellow-500",
+          
+          },
+          {
+            id:2,
+            title:"Total Watch Time",
+            metric:"31K",
+            percent:6.08,
+            period:'Vs Previous Month',
+            favorite:false,
+            classes:" border-red-500",
+          },
+          {
+            id:3,
+            title:"Total Watch Time",
+            metric:"31K",
+            percent:-6.08,
+            period:'Vs Previous Month',
+            favorite:false,
+            classes:" border-indigo-500",
+          },
+          {
+            id:4,
+            title:"Total Watch Time",
+            metric:"31K",
+            percent:6.08,
+            period:'Vs Previous Month',
+            favorite:false,
+            classes:" border-blue-500",
+          }]
+        
+        }
     ],
 
     MetricCharts:[
         {      
               id:1,
               kipsMetricsID:1,
-             
+              highcharts:[
+                  {
+                    favorite:true,
+                    chartOptions: {
+                      series: [{
+                        data: [1,2,3] // sample data
+                      }]
+                    }
+                  },
+                  {
+                    favorite:true,
+                    chartOptions: {
+                      series: [{
+                        data: [1,2,3,5,6,6,7] // sample data
+                      }]
+                    }
+                  }
+              ],
               charts:[
                 {
                   type:'line',
@@ -247,10 +271,11 @@ export default createStore({
    
            const selectedMetric = state.MetricCharts.filter(metricItem=> {
            
-           return  metricItem.charts.some((item, index)=> index ===payload.favChartIndex)
+           return  metricItem.highcharts.some((item, index)=> index ===payload.favChartIndex)
            })[0]
+           
            //change charts
-           const charts = selectedMetric.charts.map((item,index)=> {
+           const charts = selectedMetric.highcharts.map((item,index)=> {
          
              if(index ===payload.favChartIndex) {
                item.favorite = !item.favorite;
@@ -263,7 +288,7 @@ export default createStore({
            //Find the kips metric and replace
            state.kipsMetrics= state.kipsMetrics.map((item)=> {
              if(item.id ===payload.id) {
-               item.charts = charts
+               item.highcharts = charts
              }
              return item;
            })
@@ -278,7 +303,7 @@ export default createStore({
         }
              return  item.kipsMetricsID === payload.activeID  
       })[0]
-      activeMetricChart.charts = payload.value;
+      activeMetricChart.highcharts = payload.value;
       state.MetricCharts = state.MetricCharts.map((item,index)=> {
         if(index ===activeChartIndex) {
           item = activeMetricChart
@@ -292,7 +317,8 @@ export default createStore({
       },
 
       SET_FAVORITE(state, payload) {
-        state.kipsMetrics = state.kipsMetrics.map(item=> {
+       
+        state.kipsMetrics[payload.metric_type_index].KPI_metrics= state.kipsMetrics[payload.metric_type_index].KPI_metrics.map(item=> {
           if(item.id ===payload.id) {
             item.favorite = !item.favorite
           }

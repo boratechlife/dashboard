@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
+
+.nm-shadow {
+    border-radius: 21px;
+background: #ffffff;
+box-shadow:  -35px 35px 100px #e6e6e6,
+             35px -35px 50px #ffffff;
+}
 @tailwind utilities;
