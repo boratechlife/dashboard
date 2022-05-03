@@ -5,6 +5,8 @@ export default createStore({
        {
           metric_type_id:1,
           name:"IFT Activity",
+          background: "bg-indigo-800 nm-inset-indigo-800",
+          
   
           KPI_metrics:[{
             id:1,
@@ -13,7 +15,7 @@ export default createStore({
             percent:6.08,
             period:'Vs Previous Month',
             favorite:false,
-            classes:" border-yellow-500",
+           
           
           },
           {
@@ -23,26 +25,209 @@ export default createStore({
             percent:6.08,
             period:'Vs Previous Month',
             favorite:false,
-            classes:" border-red-500",
+            
           },
-          {
-            id:3,
-            title:"Total Watch Time",
-            metric:"31K",
-            percent:-6.08,
-            period:'Vs Previous Month',
-            favorite:false,
-            classes:" border-indigo-500",
-          },
-          {
-            id:4,
+          // {
+          //   id:3,
+          //   title:"Total Watch Time",
+          //   metric:"31K",
+          //   percent:-6.08,
+          //   period:'Vs Previous Month',
+          //   favorite:false,
+          //   classes:" border-indigo-500",
+          // },
+          // {
+          //   id:4,
+          //   title:"Total Watch Time",
+          //   metric:"31K",
+          //   percent:6.08,
+          //   period:'Vs Previous Month',
+          //   favorite:false,
+          //   classes:" border-blue-500",
+          // }
+        ]
+        
+        },
+
+        {
+          metric_type_id:1,
+          name:"Coverage",
+          background: "bg-blue-800 nm-inset-blue-800",
+  
+          KPI_metrics:[{
+            id:1,
             title:"Total Watch Time",
             metric:"31K",
             percent:6.08,
             period:'Vs Previous Month',
             favorite:false,
-            classes:" border-blue-500",
-          }]
+           
+          
+          },
+          {
+            id:2,
+            title:"Total Watch Time",
+            metric:"31K",
+            percent:6.08,
+            period:'Vs Previous Month',
+            favorite:false,
+
+          },
+          // {
+          //   id:3,
+          //   title:"Total Watch Time",
+          //   metric:"31K",
+          //   percent:-6.08,
+          //   period:'Vs Previous Month',
+          //   favorite:false,
+          //   classes:" border-indigo-500",
+          // },
+          // {
+          //   id:4,
+          //   title:"Total Watch Time",
+          //   metric:"31K",
+          //   percent:6.08,
+          //   period:'Vs Previous Month',
+          //   favorite:false,
+          //   classes:" border-blue-500",
+          // }
+        ]
+        
+        },
+        {
+          metric_type_id:1,
+          name:"Messaging",
+          background: "bg-emerald-800 nm-inset-emerald-800",
+  
+          KPI_metrics:[{
+            id:1,
+            title:"Total Watch Time",
+            metric:"31K",
+            percent:6.08,
+            period:'Vs Previous Month',
+            favorite:false,
+           
+          
+          },
+          {
+            id:2,
+            title:"Total Watch Time",
+            metric:"31K",
+            percent:6.08,
+            period:'Vs Previous Month',
+            favorite:false,
+            
+          },
+          // {
+          //   id:3,
+          //   title:"Total Watch Time",
+          //   metric:"31K",
+          //   percent:-6.08,
+          //   period:'Vs Previous Month',
+          //   favorite:false,
+          //   classes:" border-indigo-500",
+          // },
+          // {
+          //   id:4,
+          //   title:"Total Watch Time",
+          //   metric:"31K",
+          //   percent:6.08,
+          //   period:'Vs Previous Month',
+          //   favorite:false,
+          //   classes:" border-blue-500",
+          // }
+        ]
+        
+        },
+        {
+          metric_type_id:1,
+          name:"Direct Sales",
+          background: "bg-slate-800 nm-inset-slate-800",
+  
+          KPI_metrics:[{
+            id:1,
+            title:"Total Watch Time",
+            metric:"31K",
+            percent:6.08,
+            period:'Vs Previous Month',
+            favorite:false,
+           
+          
+          },
+          {
+            id:2,
+            title:"Total Watch Time",
+            metric:"31K",
+            percent:6.08,
+            period:'Vs Previous Month',
+            favorite:false,
+            
+          },
+          // {
+          //   id:3,
+          //   title:"Total Watch Time",
+          //   metric:"31K",
+          //   percent:-6.08,
+          //   period:'Vs Previous Month',
+          //   favorite:false,
+          //   classes:" border-indigo-500",
+          // },
+          // {
+          //   id:4,
+          //   title:"Total Watch Time",
+          //   metric:"31K",
+          //   percent:6.08,
+          //   period:'Vs Previous Month',
+          //   favorite:false,
+          //   classes:" border-blue-500",
+          // }
+        ]
+        
+        },
+
+        {
+          metric_type_id:1,
+          name:"IQVIA Sales",
+          background: "bg-gray-800 nm-inset-gray-800",
+  
+          KPI_metrics:[{
+            id:1,
+            title:"Total Watch Time",
+            metric:"31K",
+            percent:6.08,
+            period:'Vs Previous Month',
+            favorite:false,
+           
+          
+          },
+          {
+            id:2,
+            title:"Total Watch Time",
+            metric:"31K",
+            percent:6.08,
+            period:'Vs Previous Month',
+            favorite:false,
+            
+          },
+          // {
+          //   id:3,
+          //   title:"Total Watch Time",
+          //   metric:"31K",
+          //   percent:-6.08,
+          //   period:'Vs Previous Month',
+          //   favorite:false,
+          //   classes:" border-indigo-500",
+          // },
+          // {
+          //   id:4,
+          //   title:"Total Watch Time",
+          //   metric:"31K",
+          //   percent:6.08,
+          //   period:'Vs Previous Month',
+          //   favorite:false,
+          //   classes:" border-blue-500",
+          // }
+        ]
         
         }
     ],

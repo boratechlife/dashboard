@@ -1,9 +1,9 @@
 <template>
     <!-- SIDEBAR -->
-  <div :class="openMobileMenu ? 'w-full overflow-hidden' : 'hidden lg:block'" class="fixed z-50 lg:w-64 bg-gray-800 top-0 h-screen text-gray-500 py-4 ">
+  <div :class="openMobileMenu ? 'w-full overflow-hidden' : 'hidden lg:block'" class="fixed z-50 lg:w-64 bg-indigo-900 top-0 h-screen text-gray-200 py-4 ">
     <!-- LOGO -->
     <h4 class="hidden lg:block text-xl font-extrabold w-full bg-opacity-90 shadow pb-3 ">
-      <span class="text-teal-500">VI</span>
+      <span class="text-yellow-500">VI</span>
       <span class="text-white">ZONE</span>
     </h4>
     <!-- END LOGO -->
