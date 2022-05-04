@@ -1,4 +1,6 @@
 import {createStore} from 'vuex'
+const colors = ['#c42525','#2f7ed8', '#0d233a', '#8bbc21', '#910000', '#1aadce',
+'#492970', '#f28f43', '#77a1e5' , '#a6c96a']
 export default createStore({
     state:{
       kipsMetrics:[
@@ -231,7 +233,7 @@ export default createStore({
         
         }
     ],
-
+   
     MetricCharts:[
         {      
               id:1,
@@ -240,191 +242,195 @@ export default createStore({
                   {
                     favorite:true,
                     chartOptions: {
+                      plotOptions: {
+                        column: {
+                          borderRadius:4
+                        }
+                      },
+                      chart:{
+                      type: 'bar'
+                       },
+                       colors:colors,
+                      title:  {
+                      text: 'Field Days'
+                  },
+                      xAxis:{
+                      categories: ['Apples', 'Bananas', 'Oranges']
+                  },
+                      yAxis: {
+                      title: {
+                          text: 'Fruit eaten'
+                      }
+                  },
                       series: [{
-                        data: [1,2,3] // sample data
-                      }]
-                    }
+                      name: 'Jane',
+                      data: [1, 0, 4]
+                  }, {
+                      name: 'John',
+                      data: [5, 7, 3]
+                  }]
+                  }
                   },
                   {
                     favorite:true,
                     chartOptions: {
+                      colors:colors,
+                      chart:{
+                      type: 'column'
+                  },
+                      title: {
+                      text: '# Contact days'
+                  },
+                      
+                      xAxis: {
+                      categories: [
+                          'Jan',
+                          'Feb',
+                          'Mar',
+                          'Apr',
+                          'May',
+                          'Jun',
+                          'Jul',
+                          'Aug',
+                          'Sep',
+                          'Oct',
+                          'Nov',
+                          'Dec'
+                      ],
+                      crosshair: true
+                  },
+                      yAxis: {
+                      min: 0,
+                      title: {
+                          text: 'Rainfall (mm)'
+                      }
+                  },
+                      tooltip: {
+                      headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                      pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                          '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                      footerFormat: '</table>',
+                      shared: true,
+                      useHTML: true
+                  },
+                      plotOptions: {
+                      column: {
+                          pointPadding: 0.2,
+                          borderWidth: 0
+                      }
+                  },
                       series: [{
-                        data: [1,2,3,5,6,6,7] // sample data
-                      }]
-                    }
+                      name: 'Tokyo',
+                      data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+                  }, {
+                      name: 'New York',
+                      data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5, 106.6, 92.3]
+                  }, {
+                      name: 'London',
+                      data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
+                  }, {
+                      name: 'Berlin',
+                      data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1]
+                  }]
+                  }
+                  },
+                  {
+                    favorite:true,
+                    chartOptions: {
+                      colors:colors,
+                      chart:{
+                      type: 'line'
+                       },
+                      title:  {
+                      text: '# Contacts per day'
+                  },
+                      xAxis:{
+                      categories: ['Computers', 'Desktops', 'Oranges']
+                  },
+                      yAxis: {
+                      title: {
+                          text: 'Fruit eaten'
+                      }
+                  },
+                      series: [{
+                      name: 'Jane',
+                      data: [100, 200, 400]
+                  }, {
+                      name: 'John',
+                      data: [5, 7, 3]
+                  }]
+                  }
+                  },
+                  {
+                    favorite:true,
+                    chartOptions: {
+                      colors:colors,
+                      chart:{
+                      type: 'area'
+                  },
+                      title: {
+                      text: '# Planned Contacts'
+                  },
+          
+                      xAxis:{
+                      allowDecimals: false,
+                      labels: {
+                          formatter: function () {
+                              return this.value; // clean, unformatted number for year
+                          }
+                      }
+                  },
+                      yAxis: {
+                      title: {
+                          text: 'Nuclear weapon states'
+                      },
+                      labels: {
+                          formatter: function () {
+                              return this.value / 1000 + 'k';
+                          }
+                      }
+                  },
+                      tooltip:  {
+                      pointFormat: '{series.name} produced <b>{point.y:,.0f}</b><br/>warheads in {point.x}'
+                  },
+                      plotOptions: {
+                      area: {
+                          pointStart: 1940,
+                          marker: {
+                              enabled: false,
+                              symbol: 'circle',
+                              radius: 2,
+                              states: {
+                                  hover: {
+                                      enabled: true
+                                  }
+                              }
+                          }
+                      }
+                  },
+                      series: [{
+                      name: 'USA',
+                      data: [null, null, null, null, null, 6, 11, 32, 110, 235, 369, 640,
+                          1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126,
+                          27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342, 26662,
+                          26956, 27912, 28999, 28965, 27826, 25579, 25722, 24826, 24605,
+                          24304, 23464, 23708, 24099, 24357, 24237, 24401, 24344, 23586,
+                          22380, 21004, 17287, 14747, 13076, 12555, 12144, 11009, 10950,
+                          10871, 10824, 10577, 10527, 10475, 10421, 10358, 10295, 10104]
+                  }, {
+                      name: 'USSR/Russia',
+                      data: [null, null, null, null, null, null, null, null, null, null,
+                          5, 25, 50, 120, 150, 200, 426, 660, 869, 1060, 1605, 2471, 3322,
+                          4238, 5221, 6129, 7089, 8339, 9399, 10538, 11643, 13092, 14478,
+                          15915, 17385, 19055, 21205, 23044, 25393, 27935, 30062, 32049,
+                          33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000, 37000,
+                          35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000, 22000,
+                          21000, 20000, 19000, 18000, 18000, 17000, 16000]
+                  }]
+                  }
                   }
               ],
-              charts:[
-                {
-                  type:'line',
-                  favorite:true,
-                  series: [{
-                      name: "Desktops",
-                      data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
-                  }],
-                  chartOptions: {
-                    chart: {
-                      height: 350,
-                      type: 'line',
-                      toolbar: {
-                        show: false,
-                      },
-                      zoom: {
-                        enabled: false
-                      }
-                    },
-                    dataLabels: {
-                      enabled: false
-                    },
-                    stroke: {
-                      curve: 'straight'
-                    },
-                    title: {
-                      text: 'Product Trends by Month',
-                      align: 'left'
-                    },
-                    grid: {
-                      row: {
-                        colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
-                        opacity: 0.5
-                      },
-                    },
-                    xaxis: {
-                      categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
-                    }
-                  },
-                  
-                  
-                },
-                {
-                  type:'area',
-                  favorite:false,
-                  series: [{
-                    name: 'series1',
-                    data: [31, 40, 28, 51, 42, 109, 100]
-                  }, {
-                    name: 'series2',
-                    data: [11, 32, 45, 32, 34, 52, 41]
-                  }],
-                  chartOptions: {
-                    chart: {
-                      height: 350,
-                      type: 'area',
-                      toolbar: {
-                        show: false,
-                      }
-                    },
-                    dataLabels: {
-                      enabled: false
-                    },
-                    stroke: {
-                      curve: 'smooth'
-                    },
-                    title: {
-                      text: 'Product Trends by Month',
-                      align: 'left',
-                      style: {
-                        fontSize:  '12px',
-                      }
-                    },
-                    xaxis: {
-                      type: 'datetime',
-                      categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
-                    },
-                    tooltip: {
-                      x: {
-                        format: 'dd/MM/yy HH:mm'
-                      },
-                    },
-                  },
-                  
-                  
-                },
-                {
-                  type:"bar",
-                  favorite:false,
-                  series: [{
-                    data: [400, 430, 448, 470, 540, 580, 690, 1100, 1200, 1380]
-                  }],
-                  chartOptions: {
-                    chart: {
-                      type: 'bar',
-                      height: 350,
-                      toolbar: {
-                        show: false,
-                      }
-                    },
-                    title: {
-                      text: 'Traffic Sources'
-                    },
-                    plotOptions: {
-                      bar: {
-                        borderRadius: 4,
-                        horizontal: true,
-                      }
-                    },
-                    dataLabels: {
-                      enabled: false
-                    },
-                    xaxis: {
-                      categories: ['South Korea', 'Canada', 'United Kingdom', 'Netherlands', 'Italy', 'France', 'Japan',
-                        'United States', 'China', 'Germany'
-                      ],
-                    }
-                  },
-                  
-                  
-                },
-                {
-                 type:'line',
-                 favorite:false,
-                  series: [{
-                    name: 'Website Blog',
-                    type: 'column',
-                    data: [440, 505, 414, 671, 227, 413, 201, 352, 752, 320, 257, 160]
-                  }, {
-                    name: 'Social Media',
-                    type: 'line',
-                    data: [23, 42, 35, 27, 43, 22, 17, 31, 22, 22, 12, 16]
-                  }],
-                  chartOptions: {
-                    chart: {
-                      height: 350,
-                      type: 'line',
-                      toolbar: {
-                        show: false,
-                      }
-                    },
-                    stroke: {
-                      width: [0, 4]
-                    },
-                    title: {
-                      text: 'Traffic Sources'
-                    },
-                    dataLabels: {
-                      enabled: true,
-                      enabledOnSeries: [1]
-                    },
-                    labels: ['01 Jan 2001', '02 Jan 2001', '03 Jan 2001', '04 Jan 2001', '05 Jan 2001', '06 Jan 2001', '07 Jan 2001', '08 Jan 2001', '09 Jan 2001', '10 Jan 2001', '11 Jan 2001', '12 Jan 2001'],
-                    xaxis: {
-                      type: 'datetime'
-                    },
-                    yaxis: [{
-                      title: {
-                        text: 'Website Blog',
-                      },
-                    
-                    }, {
-                      opposite: true,
-                      title: {
-                        text: 'Social Media'
-                      }
-                    }]
-                  },
-                  
-                  
-                },
-              ]
+          
         },
     ],
     enableEditing:true,
