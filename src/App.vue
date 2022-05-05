@@ -1,12 +1,17 @@
 
 <template>
   <div class="w-full" >
+<div :class="openSideBar ? 'transform translate-x-0':'transform -translate-x-64'" class="fixed top-0 z-50 transition-all duration-500" >
 
-       <Sidebar />
+       <Sidebar @toggle-side-bar="openSideBar = !openSideBar"  />
+  </div>     
   <!-- MAIN SECTION -->
-  <main class="flex-1 lg:ml-64 py-0  bg-gray-100 min-h-screen mt-0">
+  <main :class="openSideBar ? 'lg:ml-64' : 'lg:w-full'" class="flex-1  py-0  bg-gray-100 min-h-screen mt-0">
   <TopNav />
+  <div class="px-4 content w-full">
  <router-view />
+  </div>
+
 </main>
 
 </div>
@@ -19,6 +24,11 @@ export default {
   components: {
     Sidebar,
     TopNav
+  },
+  data() {
+    return {
+      openSideBar:true
+    }
   }
 }
 </script>

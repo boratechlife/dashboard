@@ -1,7 +1,15 @@
 <template>
     <!-- SIDEBAR -->
   <div :class="openMobileMenu ? 'w-full overflow-hidden' : 'hidden lg:block'" class="fixed z-50 lg:w-64 bg-indigo-900 top-0 h-screen text-gray-200 py-4 ">
-    <!-- LOGO -->
+   <div class="relative w-full">
+     <!-- MENU TOGGLE -->
+<div @click="$emit('toggle-side-bar')" class="absolute cursor-pointer rounded-full h-24 w-12 top-1/2 -right-6 pl-3  transform -translate-1/2 bg-indigo-900 text-white flex items-center justify-center">
+>
+</div>
+
+     <!-- END MENU TOGGLE -->
+
+      <!-- LOGO -->
     <h4 class="hidden lg:block text-xl font-extrabold w-full bg-opacity-90 shadow pb-3 ">
       <span class="text-yellow-500">VI</span>
       <span class="text-white">ZONE</span>
@@ -57,6 +65,8 @@
 
 
 <!-- END MENU SECTION -->
+   </div>
+   
   </div>
   <!-- END SIDEBAR -->
 </template>
