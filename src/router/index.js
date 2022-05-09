@@ -9,7 +9,17 @@ const routes = [
     component: Home,
   },
   {
+    path: "/metrics/edit",
+    name: "EDIT",
+    component: Home,
+  },
+  {
     path: "/details",
+    name: "Details",
+    component: Details,
+  },
+  {
+    path: "/details/edit",
     name: "Details",
     component: Details,
   },

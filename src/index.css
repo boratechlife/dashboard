@@ -7,4 +7,15 @@ background: #ffffff;
 box-shadow:  -35px 35px 100px #e6e6e6,
              35px -35px 50px #ffffff;
 }
+
+body {
+    background: linear-gradient(90.11deg, #E8EBFC 13.14%, #E7EAFB 31.72%, #E0E3F8 75.68%, #E5E8F9 92.74%);
+}
+
+.card {
+    background: linear-gradient(89.62deg, #F2F5FE 57.92%, #EDEFFB 76.21%);
+border: 2px solid #FFFFFF;
+box-shadow: -3px 35px 44px -9px #8B95DD;
+border-radius: 37px;
+}
 @tailwind utilities;

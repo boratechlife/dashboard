@@ -9,9 +9,9 @@
 <!-- START CARDS SECTION -->
 <div class="w-full px-4">
 <StatisticsHeader />
-<div class="grid grid-cols-1 lg:grid-cols-4 gap-8 mt-6 relative">
+<div class="grid grid-cols-1 lg:grid-cols-1 lg:w-72 gap-8 mt-6 relative">
   <div class="absolute z-10 rounded-t-2xl bg-gradient from-bg-gray-300 to-bg-tranparent w-full h-64"></div>
-  <div class="card bg-transparent p-2 z-30 " v-for="(item, index) in metrics" :key="index"> 
+  <div class=" bg-transparent p-2 z-30 " v-for="(item, index) in metrics" :key="index"> 
 
 <draggable 
   v-model="item.KPI_metrics" 
@@ -60,22 +60,19 @@ export default {
          ...mapState(['kipsMetrics','enableEditing']),
          metrics: {
             get() {
-            // if( this.kipsMetrics.some(item=>item.favorite ===true) && !this.enableEditing) {
-            //  return this.kipsMetrics.filter(item=> item.favorite ===true)
-            // }
+            if( this.kipsMetrics.some(item=>item.favorite ===true) && !this.enableEditing) {
+             return this.kipsMetrics.filter(item=> item.favorite ===true)
+            }
            return  this.kipsMetrics;
         },
         set(value) {
           console.log(value);
-          //  this.$store.commit('updateMetrics', value)
+            this.$store.commit('updateMetrics', value)
         }
 
          }
        },
 
-       mounted() {
-         console.log(this.kipsMetrics.some(item=>item.favorite ===true));
-       }
 }
 </script>
 

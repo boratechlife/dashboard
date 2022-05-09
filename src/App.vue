@@ -6,7 +6,7 @@
        <Sidebar @toggle-side-bar="openSideBar = !openSideBar"  />
   </div>     
   <!-- MAIN SECTION -->
-  <main :class="openSideBar ? 'lg:ml-64' : 'lg:w-full'" class="flex-1  py-0  bg-gray-100 min-h-screen mt-0">
+  <main :class="openSideBar ? 'lg:ml-64' : 'lg:w-full'" class="flex-1  py-0   min-h-screen mt-0">
   <TopNav />
   <div class="px-4 content w-full">
  <router-view />

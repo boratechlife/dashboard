@@ -16,7 +16,7 @@ export default createStore({
             metric:"31K",
             percent:6.08,
             period:'Vs Previous Month',
-            favorite:false,
+            favorite:true,
            
           
           },
@@ -433,7 +433,7 @@ export default createStore({
           
         },
     ],
-    enableEditing:true,
+    enableEditing:false,
     enableChartEditing:false,
     openMobileMenu:false,
     openFilter:false,

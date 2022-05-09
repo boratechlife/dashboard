@@ -22,7 +22,7 @@
         <span><svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="16 3 21 8 8 21 3 21 3 16 16 3"></polygon></svg></span>
         <span class="text-sm">Edit</span>
       </button>
-       <button v-else  @click.prevent="save" class="btn btn-outline btn-primary btn-sm gap-2 py-0 text-sm">
+       <button v-else  @click.prevent="$route.path==='' ? save : $router.push('/metrics/edit')" class="btn btn-outline btn-primary btn-sm gap-2 py-0 text-sm">
         <span class="text-sm">Save</span>
       </button>
       </template>
@@ -80,7 +80,12 @@ export default {
             'save',
             'saveChart'
         ])
-      }
+      },
+     mounted() {
+        if(this.$route.path == '/metrics/edit') {
+          this.ENABLE_EDITING(true)
+        }
+       }
 }
 </script>
 
