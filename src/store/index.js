@@ -3,6 +3,7 @@ const colors = ['#c42525','#2f7ed8', '#0d233a', '#8bbc21', '#910000', '#1aadce',
 '#492970', '#f28f43', '#77a1e5' , '#a6c96a']
 export default createStore({
     state:{
+      searchResults: {},
       kipsMetrics:[
        {
           metric_type_id:1,
@@ -12,7 +13,7 @@ export default createStore({
   
           KPI_metrics:[{
             id:1,
-            title:"Total Watch Time",
+            title:"#Field Days",
             metric:"31K",
             percent:6.08,
             period:'Vs Previous Month',
@@ -22,31 +23,85 @@ export default createStore({
           },
           {
             id:2,
-            title:"Total Watch Time",
+            title:"# Contact days",
             metric:"31K",
             percent:6.08,
             period:'Vs Previous Month',
             favorite:false,
             
           },
-          // {
-          //   id:3,
-          //   title:"Total Watch Time",
-          //   metric:"31K",
-          //   percent:-6.08,
-          //   period:'Vs Previous Month',
-          //   favorite:false,
-          //   classes:" border-indigo-500",
-          // },
-          // {
-          //   id:4,
-          //   title:"Total Watch Time",
-          //   metric:"31K",
-          //   percent:6.08,
-          //   period:'Vs Previous Month',
-          //   favorite:false,
-          //   classes:" border-blue-500",
-          // }
+          {
+            id:3,
+            title:"% Contact days",
+            metric:"31K",
+            percent:-6.08,
+            period:'Vs Previous Month',
+            favorite:false,
+          },
+          {
+            id:4,
+            title:"# Contacts per day",
+            metric:"31K",
+            percent:6.08,
+            period:'Vs Previous Month',
+            favorite:false,
+            classes:" border-blue-500",
+          },
+          {
+            id:5,
+            title:"# Contacts",
+            metric:"31K",
+            percent:6.08,
+            period:'Vs Previous Month',
+            favorite:false,
+            classes:" border-blue-500",
+          },
+          {
+            id:6,
+            title:"# Planned Contacts",
+            metric:"31K",
+            percent:6.08,
+            period:'Vs Previous Month',
+            favorite:false,
+            classes:" border-blue-500",
+          },
+          {
+            id:7,
+            title:"% Contacts on Planned Stakeholders",
+            metric:"31K",
+            percent:6.08,
+            period:'Vs Previous Month',
+            favorite:false,
+            classes:" border-blue-500",
+          },
+          {
+            id:8,
+            title:"% Contacts vs. Plan Contacts",
+            metric:"31K",
+            percent:6.08,
+            period:'Vs Previous Month',
+            favorite:false,
+            classes:" border-blue-500",
+          },
+          {
+            id:9,
+            title:"# Calendar days",
+            metric:"31K",
+            percent:6.08,
+            period:'Vs Previous Month',
+            favorite:false,
+            classes:" border-blue-500",
+          },
+          {
+            id:10,
+            title:"# Available working days",
+            metric:"31K",
+            percent:6.08,
+            period:'Vs Previous Month',
+            favorite:false,
+            classes:" border-blue-500",
+          }
+
         ]
         
         },
@@ -56,9 +111,10 @@ export default createStore({
           name:"Coverage",
           background: "bg-blue-800 nm-inset-blue-800",
   
-          KPI_metrics:[{
+          KPI_metrics:[
+            {
             id:1,
-            title:"Total Watch Time",
+            title:"# All Stakeholders",
             metric:"31K",
             percent:6.08,
             period:'Vs Previous Month',
@@ -68,31 +124,67 @@ export default createStore({
           },
           {
             id:2,
-            title:"Total Watch Time",
+            title:"# Stakeholders with Contacts ",
             metric:"31K",
             percent:6.08,
             period:'Vs Previous Month',
             favorite:false,
 
           },
-          // {
-          //   id:3,
-          //   title:"Total Watch Time",
-          //   metric:"31K",
-          //   percent:-6.08,
-          //   period:'Vs Previous Month',
-          //   favorite:false,
-          //   classes:" border-indigo-500",
-          // },
-          // {
-          //   id:4,
-          //   title:"Total Watch Time",
-          //   metric:"31K",
-          //   percent:6.08,
-          //   period:'Vs Previous Month',
-          //   favorite:false,
-          //   classes:" border-blue-500",
-          // }
+          {
+            id:3,
+            title:"# Planned Stakeholders",
+            metric:"31K",
+            percent:-6.08,
+            period:'Vs Previous Month',
+            favorite:false,
+            classes:" border-indigo-500",
+          },
+          {
+            id:4,
+            title:"% Coverage ",
+            metric:"31K",
+            percent:6.08,
+            period:'Vs Previous Month',
+            favorite:false,
+            classes:" border-blue-500",
+          },
+          {
+            id:5,
+            title:"% Frequency Coverage on Planned Stakeholders ",
+            metric:"31K",
+            percent:6.08,
+            period:'Vs Previous Month',
+            favorite:false,
+            classes:" border-blue-500",
+          },
+          {
+            id:6,
+            title:"# Stakeholders with missing contacts",
+            metric:"31K",
+            percent:6.08,
+            period:'Vs Previous Month',
+            favorite:false,
+            classes:" border-blue-500",
+          },
+          {
+            id:7,
+            title:"# Contacts missing",
+            metric:"31K",
+            percent:6.08,
+            period:'Vs Previous Month',
+            favorite:false,
+            classes:" border-blue-500",
+          },
+          {
+            id:8,
+            title:"# Frequency",
+            metric:"31K",
+            percent:6.08,
+            period:'Vs Previous Month',
+            favorite:false,
+            classes:" border-blue-500",
+          }
         ]
         
         },
@@ -103,7 +195,7 @@ export default createStore({
   
           KPI_metrics:[{
             id:1,
-            title:"Total Watch Time",
+            title:"# Messages used",
             metric:"31K",
             percent:6.08,
             period:'Vs Previous Month',
@@ -113,31 +205,22 @@ export default createStore({
           },
           {
             id:2,
-            title:"Total Watch Time",
+            title:"% Message coverage",
             metric:"31K",
             percent:6.08,
             period:'Vs Previous Month',
             favorite:false,
             
           },
-          // {
-          //   id:3,
-          //   title:"Total Watch Time",
-          //   metric:"31K",
-          //   percent:-6.08,
-          //   period:'Vs Previous Month',
-          //   favorite:false,
-          //   classes:" border-indigo-500",
-          // },
-          // {
-          //   id:4,
-          //   title:"Total Watch Time",
-          //   metric:"31K",
-          //   percent:6.08,
-          //   period:'Vs Previous Month',
-          //   favorite:false,
-          //   classes:" border-blue-500",
-          // }
+          {
+            id:3,
+            title:"% CLM usage",
+            metric:"31K",
+            percent:-6.08,
+            period:'Vs Previous Month',
+            favorite:false,
+            classes:" border-indigo-500",
+          }
         ]
         
         },
@@ -146,9 +229,10 @@ export default createStore({
           name:"Direct Sales",
           background: "bg-slate-800 nm-inset-slate-800",
   
-          KPI_metrics:[{
+          KPI_metrics:[
+            {
             id:1,
-            title:"Total Watch Time",
+            title:"# Sales",
             metric:"31K",
             percent:6.08,
             period:'Vs Previous Month',
@@ -158,31 +242,31 @@ export default createStore({
           },
           {
             id:2,
-            title:"Total Watch Time",
+            title:"# Sales growth",
             metric:"31K",
             percent:6.08,
             period:'Vs Previous Month',
             favorite:false,
             
           },
-          // {
-          //   id:3,
-          //   title:"Total Watch Time",
-          //   metric:"31K",
-          //   percent:-6.08,
-          //   period:'Vs Previous Month',
-          //   favorite:false,
-          //   classes:" border-indigo-500",
-          // },
-          // {
-          //   id:4,
-          //   title:"Total Watch Time",
-          //   metric:"31K",
-          //   percent:6.08,
-          //   period:'Vs Previous Month',
-          //   favorite:false,
-          //   classes:" border-blue-500",
-          // }
+          {
+            id:3,
+            title:"% Sales growth",
+            metric:"31K",
+            percent:-6.08,
+            period:'Vs Previous Month',
+            favorite:false,
+            classes:" border-indigo-500",
+          },
+          {
+            id:4,
+            title:"Planned Packs",
+            metric:"31K",
+            percent:6.08,
+            period:'Vs Previous Month',
+            favorite:false,
+            classes:" border-blue-500",
+          }
         ]
         
         },
@@ -194,7 +278,7 @@ export default createStore({
   
           KPI_metrics:[{
             id:1,
-            title:"Total Watch Time",
+            title:"% Sales vs. Plan",
             metric:"31K",
             percent:6.08,
             period:'Vs Previous Month',
@@ -204,31 +288,23 @@ export default createStore({
           },
           {
             id:2,
-            title:"Total Watch Time",
+            title:"% Market Share",
             metric:"31K",
             percent:6.08,
             period:'Vs Previous Month',
             favorite:false,
             
           },
-          // {
-          //   id:3,
-          //   title:"Total Watch Time",
-          //   metric:"31K",
-          //   percent:-6.08,
-          //   period:'Vs Previous Month',
-          //   favorite:false,
-          //   classes:" border-indigo-500",
-          // },
-          // {
-          //   id:4,
-          //   title:"Total Watch Time",
-          //   metric:"31K",
-          //   percent:6.08,
-          //   period:'Vs Previous Month',
-          //   favorite:false,
-          //   classes:" border-blue-500",
-          // }
+          {
+            id:3,
+            title:"% Market Growth",
+            metric:"31K",
+            percent:-6.08,
+            period:'Vs Previous Month',
+            favorite:false,
+            classes:" border-indigo-500",
+          },
+       
         ]
         
         }
@@ -305,14 +381,7 @@ export default createStore({
                           text: 'Rainfall (mm)'
                       }
                   },
-                      tooltip: {
-                      headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-                      pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                          '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
-                      footerFormat: '</table>',
-                      shared: true,
-                      useHTML: true
-                  },
+                   
                       plotOptions: {
                       column: {
                           pointPadding: 0.2,
@@ -439,8 +508,20 @@ export default createStore({
     openFilter:false,
     },
 
-    getters:{},
+    getters:{
+
+    },
     mutations: {
+      SEARCH_METRICS(state, payload) {
+        //Determine if cards contains the word
+        state.searchResults.kipsMetrics=  state.kipsMetrics.filter((item) =>{
+            return item.KPI_metrics.some(metric => metric.title?.toLowerCase().includes(payload?.toLowerCase()) )
+        })
+
+        // state.kipsMetrics  = (searchResult && searchResult.length>0) ? searchResult :  state.kipsMetrics
+
+
+      },
       SET_OPEN_FILTER(state,payload) {
      state.openFilter = payload;
       },

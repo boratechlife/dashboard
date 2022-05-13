@@ -2,11 +2,14 @@
   <div class="content py-6 px-4">
     <BreadCrumb title="Details" :crumbs="['Dashboard', 'Details']"/>
     <div class="bg-white">
-      <StatisticsHeader type="details"/>
-    <HighChart />
- 
+     
+<div class="flex flex-wrap lg:flex-nowrap items-top gap-4 p-3">
+  <div class="1/5 pt-7">
+  <DetailsSideBar />
+  </div>
+  <div class="flex-grow">
 
-      <draggable 
+     <draggable 
   v-model="metrics" 
   group="people" 
   @start="drag=true" 
@@ -20,7 +23,10 @@
    </div>
    </template>
 </draggable>
-    </div>
+    
+  </div>
+</div>
+     </div>
 
     <!-- START TABLE SECTION -->
     <div class="bg-white shadow-sm rounded mt-10">
@@ -50,6 +56,8 @@ import ChartComponent from "../components/ChartComponent.vue";
 import HighChart from "../components/HighChart.vue"
 import BreadCrumb from "../components/BreadCrumb.vue"
 import Table from "../components/Table.vue"
+import DetailsSideBar from "../components/DetailsSideBar.vue"
+
 
 import StatisticsHeader from '../components/StatisticsHeader.vue'
 import { mapState, mapMutations, mapActions } from 'vuex';
@@ -66,7 +74,8 @@ data() {
     HighChart,
     BreadCrumb,
     StatisticsHeader,
-    Table
+    Table,
+    DetailsSideBar
   },
 computed: {
   ...mapState(['MetricCharts','enableChartEditing']),

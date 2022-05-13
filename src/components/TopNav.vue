@@ -1,17 +1,13 @@
 <template>
            <!-- TOP NAV -->
-        <nav class="w-full shadow-lg bg-gray-50 px-4 py-2">
+        <nav class="w-full shadow-lg bg-white px-4 py-2">
         <div class="w-full flex justify-between">
-              <div class="hidden bg-gray-200 rounded-2xl relative  text-gray-600 px-3 py-1.5 lg:flex items-center">
-                <span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                </span>
-                <input type="text" class="w-20 lg:w-auto flex-1 bg-transparent outline-none px-3 border-bone">
-                <div class="absolute hidden top-10 left-0 h-40 w-full z-40 bg-white shadow">
-
-                </div>
-              </div>
+<Search />
               <div class="flex w-full lg:w-auto justify-between  items-center">
+                <!-- START FILTER -->
+<StatisticsHeader />
+
+                <!-- END FILTER -->
                 <div class="lg:hidden" @click="TOGGLE_MOBILE_MENU()">
                   <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
                 </div>
@@ -70,7 +66,14 @@
 
 <script>
 import { mapMutations } from 'vuex'
+import  StatisticsHeader from  './StatisticsHeader.vue'
+import Search from "./Search.vue"
+
 export default {
+  components: {
+    StatisticsHeader,
+    Search,
+  },
   methods: {
     ...mapMutations([
       'TOGGLE_MOBILE_MENU'
