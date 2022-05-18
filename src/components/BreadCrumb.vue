@@ -1,6 +1,6 @@
 <template>
                  <!-- START BREADCRUMB -->
-<div class="w-full flex justify-between px-4 py-2 text-xs md:text-base">
+<div class="w-full flex justify-between px-4 lg:pl-16 py-2 text-xs md:text-base">
   <h4 class="font-bold">{{title}}</h4>
   <ul class="font-light flex items-center ">
     <li v-for="(item, index) in crumbs" :key="index">

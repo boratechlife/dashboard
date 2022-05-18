@@ -7,13 +7,13 @@
 <BreadCrumb title="Dashboard" :crumbs="['Dashboard']" />
 
 <!-- START CARDS SECTION -->
-<div class="w-full px-4">
+<div class="w-full px-4 pl-16">
 
 <div class="grid grid-cols-1 lg:grid-cols-5 lg:w-full gap-8 mt-6 relative">
   <div class="absolute z-10 rounded-t-2xl bg-gradient from-bg-gray-300 to-bg-tranparent w-full h-64"></div>
   <div class=" z-30 " v-for="(item, index) in metrics" :key="index"> 
-    <div class="bg-gray-50 rounded-xl shadow-sm p-2 w-full">
-      <h4 class="text-gray-500 font-bold uppercase mb-4 ">{{item.name}}</h4>
+    <div class=" rounded-xl stat-cards shadow-sm p-2 w-full">
+     
       <draggable 
   v-model="item.KPI_metrics" 
   group="people" 
@@ -65,10 +65,18 @@ export default {
          metrics: {
             get() {
               if(this.searchMetrics) {
+                 
                 return this.searchMetrics;
+               
               }
-            if( this.kipsMetrics.some(item=>item.favorite ===true) && !this.enableEditing) {
-             return this.kipsMetrics.filter(item=> item.favorite ===true)
+            if( this.kipsMetrics.some(item=> item.KPI_metrics.some((metric) =>metric.favorite ===true)) && !this.enableEditing) {
+             return this.kipsMetrics.filter(item=> item.KPI_metrics.some((metric) =>metric.favorite ===true)).map(filtered => {
+                  const kpimetrics= filtered.KPI_metrics.filter(itemMetric =>itemMetric.favorite ===true);
+                  return  {
+                    ...filtered,
+                    KPI_metrics:kpimetrics,
+                  }
+             })
             }
            return  this.kipsMetrics;
         },

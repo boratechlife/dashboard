@@ -1,14 +1,17 @@
 
 <template>
   <div class="w-full" >
+     <Sidebar    />
 <!-- <div :class="openSideBar ? 'transform translate-x-0':'transform -translate-x-64'" class="fixed top-0 z-50 transition-all duration-500" >
 
-       <Sidebar  v-if="$route.path !=='/details'"  @toggle-side-bar="openSideBar = !openSideBar"  />
+      
   </div>      -->
   <!-- MAIN SECTION -->
   <main class="flex-1 w-full  py-0   min-h-screen mt-0">
   <TopNav />
-  <div class="px-4 content w-full">
+
+  <div class="px-4 content w-full pl-10">
+  <FilterBar v-if="openFilter"/>
  <router-view />
   </div>
 
@@ -20,15 +23,21 @@
 <script >
 import Sidebar from './components/Sidebar.vue'
 import TopNav from './components/TopNav.vue'
+import FilterBar from './components/FilterBar.vue'
+import { mapState } from 'vuex'
 export default {
   components: {
     Sidebar,
-    TopNav
+    TopNav,
+    FilterBar,
   },
   data() {
     return {
       openSideBar:true
     }
+  },
+  computed: {
+    ...mapState(['openFilter'])
   }
 }
 </script>

@@ -45,7 +45,7 @@ export default createStore({
             percent:6.08,
             period:'Vs Previous Month',
             favorite:false,
-            classes:" border-blue-500",
+           
           },
           {
             id:5,
@@ -54,7 +54,7 @@ export default createStore({
             percent:6.08,
             period:'Vs Previous Month',
             favorite:false,
-            classes:" border-blue-500",
+           
           },
           {
             id:6,
@@ -63,7 +63,7 @@ export default createStore({
             percent:6.08,
             period:'Vs Previous Month',
             favorite:false,
-            classes:" border-blue-500",
+           
           },
           {
             id:7,
@@ -72,7 +72,7 @@ export default createStore({
             percent:6.08,
             period:'Vs Previous Month',
             favorite:false,
-            classes:" border-blue-500",
+           
           },
           {
             id:8,
@@ -81,7 +81,7 @@ export default createStore({
             percent:6.08,
             period:'Vs Previous Month',
             favorite:false,
-            classes:" border-blue-500",
+           
           },
           {
             id:9,
@@ -90,7 +90,7 @@ export default createStore({
             percent:6.08,
             period:'Vs Previous Month',
             favorite:false,
-            classes:" border-blue-500",
+           
           },
           {
             id:10,
@@ -99,7 +99,7 @@ export default createStore({
             percent:6.08,
             period:'Vs Previous Month',
             favorite:false,
-            classes:" border-blue-500",
+           
           }
 
         ]
@@ -138,7 +138,7 @@ export default createStore({
             percent:-6.08,
             period:'Vs Previous Month',
             favorite:false,
-            classes:" border-indigo-500",
+            
           },
           {
             id:4,
@@ -147,7 +147,7 @@ export default createStore({
             percent:6.08,
             period:'Vs Previous Month',
             favorite:false,
-            classes:" border-blue-500",
+           
           },
           {
             id:5,
@@ -156,7 +156,7 @@ export default createStore({
             percent:6.08,
             period:'Vs Previous Month',
             favorite:false,
-            classes:" border-blue-500",
+           
           },
           {
             id:6,
@@ -165,7 +165,7 @@ export default createStore({
             percent:6.08,
             period:'Vs Previous Month',
             favorite:false,
-            classes:" border-blue-500",
+           
           },
           {
             id:7,
@@ -174,7 +174,7 @@ export default createStore({
             percent:6.08,
             period:'Vs Previous Month',
             favorite:false,
-            classes:" border-blue-500",
+           
           },
           {
             id:8,
@@ -183,7 +183,7 @@ export default createStore({
             percent:6.08,
             period:'Vs Previous Month',
             favorite:false,
-            classes:" border-blue-500",
+           
           }
         ]
         
@@ -219,7 +219,7 @@ export default createStore({
             percent:-6.08,
             period:'Vs Previous Month',
             favorite:false,
-            classes:" border-indigo-500",
+            
           }
         ]
         
@@ -256,7 +256,7 @@ export default createStore({
             percent:-6.08,
             period:'Vs Previous Month',
             favorite:false,
-            classes:" border-indigo-500",
+            
           },
           {
             id:4,
@@ -265,7 +265,7 @@ export default createStore({
             percent:6.08,
             period:'Vs Previous Month',
             favorite:false,
-            classes:" border-blue-500",
+           
           }
         ]
         
@@ -302,7 +302,7 @@ export default createStore({
             percent:-6.08,
             period:'Vs Previous Month',
             favorite:false,
-            classes:" border-indigo-500",
+            
           },
        
         ]
@@ -613,6 +613,7 @@ export default createStore({
       save(context) {
        // context.commit('UPDATE_STATE')
       context.commit('DISABLE_EDITING')
+     
        
       },
 

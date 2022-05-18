@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="lg:w-48 ml-4">
 <draggable 
   v-model="metrics.KPI_metrics" 
   group="people" 

@@ -9,13 +9,28 @@ box-shadow:  -35px 35px 100px #e6e6e6,
 }
 
 body {
-    background: linear-gradient(90.11deg, #E8EBFC 13.14%, #E7EAFB 31.72%, #E0E3F8 75.68%, #E5E8F9 92.74%);
+    @apply bg-slate-50 transition-all duration-500;
 }
 
 .card {
     background: linear-gradient(89.62deg, #F2F5FE 57.92%, #EDEFFB 76.21%);
 border: 2px solid #FFFFFF;
-box-shadow: -3px 35px 44px -9px #8B95DD;
+box-shadow: -3px 35px 44px -9px #a4a4a5;
 border-radius: 37px;
+position: relative;
+}
+.stat-cards .card::before {
+
+   @apply h-full w-full absolute bg-black  border-b-4 shadow-xl;
+}
+.sidemenu {
+    @apply bg-white !important;
+}
+.sidemenu {
+    @apply w-16 overflow-hidden transition-all duration-500;
+
+}
+.sidemenu:hover {
+    @apply w-64 overflow-hidden;
 }
 @tailwind utilities;

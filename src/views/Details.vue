@@ -23,12 +23,8 @@
    </div>
    </template>
 </draggable>
-    
-  </div>
-</div>
-     </div>
 
-    <!-- START TABLE SECTION -->
+       <!-- START TABLE SECTION -->
     <div class="bg-white shadow-sm rounded mt-10">
       <!-- START TOP -->
       <div class="top rounded-t flex bg-primary  flex-wrap justify-between bg-gray-300 py-1 px-2 lg:px-3 text-gray-200">
@@ -44,6 +40,13 @@
 
       <!-- END TABLE -->
     </div>
+
+    <!-- END TABLE SECTION --> 
+  </div>
+</div>
+     </div>
+
+
 
     <!-- END TABLE SECTION -->
   </div>
