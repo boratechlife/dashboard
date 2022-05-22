@@ -1,6 +1,6 @@
 <template>
       <!-- START TABLE -->
-      <table class="table w-full bg-white">
+      <table class="table w-full bg-white wrapper rounded-xl">
         <thead class="bg-white">
           <tr class="hidden lg:table-row bg-white w-full">
             <th>Part Vendor</th>

@@ -1,6 +1,7 @@
 <template>
-  <div class="fixed sidemenu card left-2 gap-4 pt-6 z-50 h-[70vh] top-1/2 tranform -translate-y-1/2  rounded-2xl pr-3 pr-2.5 shadow-2xl">
-    <div class="flex flex-col " v-for="(item, index) in metrics" :key="index">
+  <div class="fixed  sidemenu   left-2 gap-6 pt-6 z-50 h-[98vh] top-1/2 tranform -translate-y-1/2  rounded-2xl pr-3 pr-2.5 wrapper">
+  <div class="mb-2"></div>
+    <div class="flex flex-col mb-3" v-for="(item, index) in metrics" :key="index">
          <div class="flex  flex-row items-center text-base font-bold text-gray-500 gap-4 px-3">
            <div :class="item.background" class="flex-none w-9 h-9 p-1 rounded-full flex items-center justify-center text-white">
         <svg v-if="index===0" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -25,7 +26,7 @@
 </svg>
 
            </div>
-           <div class="name">{{item.name}}</div>
+           <div class="name text-white">{{item.name}}</div>
          </div>
     </div>
     </div>

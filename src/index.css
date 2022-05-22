@@ -11,26 +11,40 @@ box-shadow:  -35px 35px 100px #e6e6e6,
 body {
     @apply bg-slate-50 transition-all duration-500;
 }
-
+.bg-gray-light {
+    @apply bg-[#F2F2F2];
+}
 .card {
-    background: linear-gradient(89.62deg, #F2F5FE 57.92%, #EDEFFB 76.21%);
+    /* background: linear-gradient(89.62deg, #F2F5FE 57.92%, #EDEFFB 76.21%); */
 border: 2px solid #FFFFFF;
 box-shadow: -3px 35px 44px -9px #a4a4a5;
 border-radius: 37px;
 position: relative;
 }
-.stat-cards .card::before {
 
-   @apply h-full w-full absolute bg-black  border-b-4 shadow-xl;
-}
-.sidemenu {
-    @apply bg-white !important;
-}
+
+
 .sidemenu {
     @apply w-16 overflow-hidden transition-all duration-500;
+    @apply bg-[#636C78] !important;
+    
+box-shadow: -3px 35px 44px -9px #a4a4a5;
+border-radius: 37px;
+position: relative;
 
 }
 .sidemenu:hover {
     @apply w-64 overflow-hidden;
 }
+
+.wrapper {
+    position: relative;
+    @apply   rounded-2xl ;
+    -webkit-box-shadow: -8px 6px 33px 8px rgba(184,184,184,0.68); 
+    box-shadow: -8px 6px 33px 8px rgba(184,184,184,0.68);
+   
+
+
+}
+
 @tailwind utilities;

@@ -1,7 +1,7 @@
 <template>
   <div class="content py-6 px-4">
     <BreadCrumb title="Details" :crumbs="['Dashboard', 'Details']"/>
-    <div class="bg-white">
+    <div class="bg-transparent">
      
 <div class="flex flex-wrap lg:flex-nowrap items-top gap-4 p-3">
   <div class="1/5 pt-7">

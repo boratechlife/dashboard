@@ -7,13 +7,18 @@
       
   </div>      -->
   <!-- MAIN SECTION -->
-  <main class="flex-1 w-full  py-0   min-h-screen mt-0">
-  <TopNav />
+  <main class="flex-1 w-full lg:pl-24 my-2 lg:py-5 lg:pr-10   min-h-screen mt-0">
+    <div class="wrapper rounded-2xl border bg-gray-light">
+
+        <TopNav />
 
   <div class="px-4 content w-full pl-10">
   <FilterBar v-if="openFilter"/>
  <router-view />
   </div>
+
+
+    </div>
 
 </main>
 

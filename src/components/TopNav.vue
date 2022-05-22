@@ -1,6 +1,6 @@
 <template>
            <!-- TOP NAV -->
-        <nav class="w-full shadow-lg bg-white px-4 py-2">
+        <nav class="w-full  bg-transparent border-b-2 border-white px-4 py-2">
         <div class="w-full flex justify-between">
 <Search />
               <div class="flex w-full lg:w-auto justify-between  items-center">
