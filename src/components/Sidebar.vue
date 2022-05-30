@@ -1,5 +1,6 @@
 <template>
   <div class="fixed  sidemenu   left-2 gap-6 pt-6 z-50 h-[98vh] top-1/2 tranform -translate-y-1/2  rounded-2xl pr-3 pr-2.5 wrapper">
+  <template v-if="$route.path ==='/'">
   <div class="mb-2"></div>
     <div class="flex flex-col mb-3" v-for="(item, index) in metrics" :key="index">
          <div class="flex  flex-row items-center text-base font-bold text-gray-500 gap-4 px-3">
@@ -29,11 +30,16 @@
            <div class="name text-white">{{item.name}}</div>
          </div>
     </div>
+  </template>
+    <div class="w-full" v-else>
+  <DetailsSideBar />
+  </div>
     </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
+import DetailsSideBar from './DetailsSideBar.vue'
 export default {
 computed: {
           ...mapState(['kipsMetrics']),
@@ -43,6 +49,9 @@ computed: {
            return  this.kipsMetrics;
         },
          },
+    },
+components: {
+  DetailsSideBar,
 }
 }
 </script>

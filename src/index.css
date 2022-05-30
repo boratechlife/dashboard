@@ -1,6 +1,41 @@
 @tailwind base;
 @tailwind components;
 
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  z-index: 99999;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #ffe;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #fff;
+}
+::-webkit-scrollbar-track {
+  background: #666666;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #666666;
+}
+::-webkit-scrollbar-track:active {
+  background: #333333;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
 .nm-shadow {
     border-radius: 21px;
 background: #ffffff;
@@ -9,7 +44,7 @@ box-shadow:  -35px 35px 100px #e6e6e6,
 }
 
 body {
-    @apply bg-slate-50 transition-all duration-500;
+    @apply bg-slate-50 transition-all duration-500 overflow-hidden;
 }
 .bg-gray-light {
     @apply bg-[#F2F2F2];
@@ -25,16 +60,24 @@ position: relative;
 
 
 .sidemenu {
-    @apply w-16 overflow-hidden transition-all duration-500;
-    @apply bg-[#636C78] !important;
+    @apply  overflow-hidden w-56 transition-all duration-500;
+    @apply bg-[#636C78] overflow-y-auto !important ;
     
-box-shadow: -3px 35px 44px -9px #a4a4a5;
 border-radius: 37px;
 position: relative;
 
 }
+.wrapper.bg-white {
+  background: #fff;
+}
+.wrapper.active {
+  background: #113;
+}
+.sidemenu.closed {
+    @apply w-16;
+}
 .sidemenu:hover {
-    @apply w-64 overflow-hidden;
+    @apply w-56 overflow-hidden;
 }
 
 .wrapper {

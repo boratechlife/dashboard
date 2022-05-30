@@ -7,8 +7,8 @@
       
   </div>      -->
   <!-- MAIN SECTION -->
-  <main class="flex-1 w-full lg:pl-24 my-2 lg:py-5 lg:pr-10   min-h-screen mt-0">
-    <div class="wrapper rounded-2xl border bg-gray-light">
+  <main class="flex-1 w-full lg:pl-64  my-2 lg:py-5 lg:pr-10    mt-0">
+    <div class="wrapper rounded-2xl border h-[97vh] overflow-y-auto bg-gray-light">
 
         <TopNav />
 

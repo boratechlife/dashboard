@@ -5,10 +5,10 @@
   group="people" 
   @start="drag=true" 
   @end="drag=false" 
-  class="grid grid-cols-1 lg:grid-cols-1 w-full lg:w-full  gap-4   justify-between"
+  class="grid grid-cols-1 lg:grid-cols-1 w-full lg:w-full  gap-4  details justify-between"
   item-key="id">
   <template #item="{element}">
-   <StatisticCard  :metric="element" :metric_type_index="index" :background="''"/>
+   <StatisticCard  :metric="element" :metric_type_index="activeDetailsMetric.parentId" :background="''"/>
   
    </template>
 </draggable>
@@ -27,13 +27,16 @@ components: {
     draggable,
 },
 computed: {
- ...mapState(['kipsMetrics','enableEditing']),
+ ...mapState(['kipsMetrics','enableEditing','activeDetailsMetric']),
+ activeMetric() {
+  return 0;
+ },
  metrics: {
     get() {
             if(this.kipsMetrics.some(item=>item.favorite ===true) && !this.enableEditing) {
              return this.kipsMetrics.filter(item=> item.favorite ===true)
             }
-           return  this.kipsMetrics[0];
+           return  this.kipsMetrics[this.activeDetailsMetric.parentId];
         },
         set(value) {
           console.log(value);

@@ -4,9 +4,7 @@
     <div class="bg-transparent">
      
 <div class="flex flex-wrap lg:flex-nowrap items-top gap-4 p-3">
-  <div class="1/5 pt-7">
-  <DetailsSideBar />
-  </div>
+
   <div class="flex-grow">
 
      <draggable 
@@ -19,7 +17,7 @@
   <template #item="{element,index}">
    <div>
    
-  <ChartComponent  :chartMetric="getMetricByID(activeID)" :chartData="element" :chartOptions="element.chartOptions" :index="index"  v-if="element.favorite || enableChartEditing " />
+  <ChartComponent  :chartMetric="getMetricByID(activeDetailsMetric.parentId)" :chartData="element" :chartOptions="element.chartOptions" :index="index"  v-if="element.favorite || enableChartEditing " />
    </div>
    </template>
 </draggable>
@@ -81,13 +79,13 @@ data() {
     DetailsSideBar
   },
 computed: {
-  ...mapState(['MetricCharts','enableChartEditing']),
+  ...mapState(['MetricCharts','enableChartEditing','activeDetailsMetric']),
     metrics: {
             get() {
-             return  this.getMetricByID(this.activeID).highcharts
+             return  this.getMetricByID(this.activeDetailsMetric.parentId)?.highcharts
         },
         set(value) {
-            this.$store.commit('UPDATE_CHART_METRICS', {activeID:this.activeID,value:value})
+            this.$store.commit('UPDATE_CHART_METRICS', {activeID:this.activeDetailsMetric.parentId,value:value})
         }
 
          }
